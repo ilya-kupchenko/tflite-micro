@@ -238,7 +238,8 @@ TfLiteStatus InitializeTfLiteTensorFromFlatbuffer(
   const uint32_t buffer_index = flatbuffer_tensor.buffer();
   if (buffer_index >= buffers->size()) {
     MicroPrintf(
-        "Tensor references invalid buffer index %u, model has only %d buffers\n",
+        "Tensor references invalid buffer index %u, model has only %d "
+        "buffers\n",
         buffer_index, buffers->size());
     return kTfLiteError;
   }
@@ -369,7 +370,8 @@ TfLiteStatus InitializeTfLiteEvalTensorFromFlatbuffer(
   const uint32_t buffer_index = flatbuffer_tensor.buffer();
   if (buffer_index >= buffers->size()) {
     MicroPrintf(
-        "Tensor references invalid buffer index %u, model has only %d buffers\n",
+        "Tensor references invalid buffer index %u, model has only %d "
+        "buffers\n",
         buffer_index, buffers->size());
     return kTfLiteError;
   }
@@ -1151,7 +1153,8 @@ TfLiteStatus MicroAllocator::PopulateTfLiteTensorFromFlatbuffer(
   if (tensor_index < 0 ||
       static_cast<size_t>(tensor_index) >= subgraph->tensors()->size()) {
     MicroPrintf(
-        "Invalid tensor index %d for subgraph %d, subgraph has only %d tensors\n",
+        "Invalid tensor index %d for subgraph %d, subgraph has only %d "
+        "tensors\n",
         tensor_index, subgraph_idx, subgraph->tensors()->size());
     return kTfLiteError;
   }
